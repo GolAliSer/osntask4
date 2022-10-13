@@ -1,18 +1,38 @@
 #задание 2
-N1 = int(input("Введите количество элементов массива A: "))
-N2 = int(input("Введите количество элементов массива B: "))
+while True:
+    try:
+        N1 = int(input("Введите количество элементов массива A: "))
+        N2 = int(input("Введите количество элементов массива B: "))
+        break
+    except ValueError:
+        print("Вы ввели не целое число. Попробуйте снова: ")
 A = [0] * N1
 B = [0] * N2
-sp = int(input("Введите '1' для самостоятельного ввода массивов, либо введите любое другое число: "))
+while True:
+    try:
+        sp = int(input("Введите '1' для самостоятельного ввода массивов, либо введите любое другое число: "))
+        break
+    except ValueError:
+        print("Вы ввели не целое число. Попробуйте снова: ")
 if sp == 1:
     print("Введите", N1, "элементов для массива A:")
     for k in range(N1):
-        print("A[", k, "] = ", end=" ")
-        A[k] = float(input())
+        while True:
+            try:
+                print("A[", k, "] = ", end=" ")
+                A[k] = float(input())
+                break
+            except ValueError:
+                print("Вы ввели не число. Попробуйте снова: ")
     print("Введите", N2, "элементов для массива B:")
     for l in range(N2):
-        print("B[", l, "] = ", end=" ")
-        B[l] = float(input())
+        while True:
+            try:
+                print("B[", l, "] = ", end=" ")
+                B[l] = float(input())
+                break
+            except ValueError:
+                print("Вы ввели не число. Попробуйте снова: ")
 else:
     from random import random
     for i in range(N1):
